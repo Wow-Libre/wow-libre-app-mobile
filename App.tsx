@@ -1,118 +1,122 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TextInput,
+  TouchableOpacity,
   View,
+  Image,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function LoginScreen(): React.JSX.Element {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+    <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.image}
+        source={{
+          uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png',
+        }}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <Text style={styles.title}>Wow Libre</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Username"
+        placeholderTextColor="#aaa"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        placeholderTextColor="#aaa"
+        secureTextEntry
+      />
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+      <View style={styles.linksContainer}>
+        <TouchableOpacity>
+          <Text style={styles.linkText}>Olvidar Clave</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.linkText}>Registrarme</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.footerContainer}>
+        <Text style={styles.footerText}>
+          World of Warcraft® and Blizzard Entertainment® are all trademarks or
+          registered trademarks of Blizzard Entertainment in the United States
+          and/or other countries. These terms and all related materials, logos,
+          and images are copyright © Blizzard Entertainment. This site is in no
+          way associated with or endorsed by Blizzard Entertainment®.
+        </Text>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#121212',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  image: {
+    width: 100,
+    height: 100,
+    marginBottom: 16,
   },
-  sectionDescription: {
-    marginTop: 8,
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 24,
+    color: '#ffffff',
+  },
+  input: {
+    width: '80%',
+    height: 50,
+    borderColor: '#444',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    marginVertical: 8,
+    backgroundColor: '#1e1e1e',
+    fontSize: 16,
+    color: '#ffffff',
+  },
+  linksContainer: {
+    alignItems: 'center',
+    marginTop: 16,
+  },
+  linkText: {
+    color: '#1e88e5',
+    fontSize: 14,
+    textDecorationLine: 'underline',
+    marginVertical: 4,
+  },
+  button: {
+    width: '80%',
+    height: 50,
+    backgroundColor: '#1e88e5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    marginTop: 16,
+  },
+  buttonText: {
+    color: '#ffffff',
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: 'bold',
   },
-  highlight: {
-    fontWeight: '700',
+  footerContainer: {
+    marginTop: 44,
+    paddingHorizontal: 16,
+  },
+  footerText: {
+    color: '#888',
+    fontSize: 12,
+    textAlign: 'center',
   },
 });
 
-export default App;
+export default LoginScreen;
