@@ -1,0 +1,5 @@
+# ninja log v5
+4	28	0	C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86/CMakeFiles/cmake.verify_globs	dcfc36f7367c4b72
+0	2447	7578140850872486	CMakeFiles/appmodules.dir/C_/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	73d5aeb28ac5887e
+2	2757	7578140853974705	CMakeFiles/appmodules.dir/OnLoad.cpp.o	a739acda44ecd956
+2757	2854	7578140855044919	C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/build/intermediates/cxx/Debug/6u1i3y4e/obj/x86/libappmodules.so	e3a1229d43538359

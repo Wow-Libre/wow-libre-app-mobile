@@ -1,0 +1,1 @@
+C:\Users\usuario\Documents\AppWowLibre\wowlibre\node_modules\react-native\ReactAndroid\cmake-utils\default-app-setup\CMakeLists.txt

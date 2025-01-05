@@ -1,0 +1,31 @@
+{
+  "buildFiles": [
+    "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native\\ReactAndroid\\cmake-utils\\default-app-setup\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\usuario\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\android\\app\\.cxx\\Debug\\6u1i3y4e\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\usuario\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\android\\app\\.cxx\\Debug\\6u1i3y4e\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "appmodules::@6890427a1f51a3e7e1df": {
+      "artifactName": "appmodules",
+      "abi": "x86",
+      "output": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\android\\app\\build\\intermediates\\cxx\\Debug\\6u1i3y4e\\obj\\x86\\libappmodules.so",
+      "runtimeFiles": [
+        "C:\\Users\\usuario\\.gradle\\caches\\8.10.2\\transforms\\8b60b4f75564ac53567672df7a1c9a73\\transformed\\fbjni-0.6.0\\prefab\\modules\\fbjni\\libs\\android.x86\\libfbjni.so",
+        "C:\\Users\\usuario\\.gradle\\caches\\8.10.2\\transforms\\1ae2c2bcce3cae52224b57e1fa01bdc7\\transformed\\react-android-0.76.5-debug\\prefab\\modules\\jsi\\libs\\android.x86\\libjsi.so",
+        "C:\\Users\\usuario\\.gradle\\caches\\8.10.2\\transforms\\1ae2c2bcce3cae52224b57e1fa01bdc7\\transformed\\react-android-0.76.5-debug\\prefab\\modules\\reactnative\\libs\\android.x86\\libreactnative.so"
+      ]
+    }
+  }
+}

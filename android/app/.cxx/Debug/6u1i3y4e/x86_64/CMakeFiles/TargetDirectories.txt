@@ -1,0 +1,3 @@
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/CMakeFiles/appmodules.dir
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/CMakeFiles/rebuild_cache.dir
