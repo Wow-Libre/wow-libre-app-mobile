@@ -1,52 +1,62 @@
-# Node.js
+# React Native
 node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
-
-# React Native
-*.swp
-*.swo
-*.log
-
-# Build
-/build/
-/android/app/build/
-/ios/build/
-/ios/Pods/
-*.xcodeproj/*
-*.xcworkspace/*
-
-# MacOS
-.DS_Store
-
-# Android Studio
-.gradle/
-/local.properties
+package-lock.json
 
 # Expo (si usas Expo)
 .expo/
+.expo-shared/
 
-# Jest
-jest-cache/
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/gradle-wrapper.jar
+android/gradle/
 
-# IntelliJ IDEA
-.idea/
+# iOS
+ios/Pods/
+ios/build/
+ios/.build/
+ios/DerivedData/
+
+# Windows
+*.log
+*.stackdump
+*.bak
+
+# Mac
+.DS_Store
 
 # VS Code
 .vscode/
 
-# Others
-*.iml
-*.hprof
+# JetBrains IDEs
+.idea/
+
+# Logs
+*.log
+
+# React Native Bundling
+react-native.config.js
 
 # Fastlane
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots/
+fastlane/screenshots/**/*.png
+fastlane/test_output/
 
-# Android Studio 3.0+ 
-android/.gradle/
+# Build directories
+*.hmap
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+*.xcworkspace
+*.xcuserdata
+*.moved-aside
+*.orig
+*.swp
 
-# Windows
-Thumbs.db
+# Metro bundler cache
+.metro/
