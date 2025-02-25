@@ -150,7 +150,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-2d987d14194d346427ce.json",
+					"jsonFile" : "target-appmodules-Debug-23321a21b7492babad63.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				},
@@ -164,14 +164,14 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "react_codegen_rngesturehandler_codegen::@39f233abcd2c728bc6ec",
-					"jsonFile" : "target-react_codegen_rngesturehandler_codegen-Debug-acf04b321a0bee8017ad.json",
+					"jsonFile" : "target-react_codegen_rngesturehandler_codegen-Debug-97398fe82f9b2afc0af3.json",
 					"name" : "react_codegen_rngesturehandler_codegen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "react_codegen_rnpicker::@e8bb2e9e833f47d0d516",
-					"jsonFile" : "target-react_codegen_rnpicker-Debug-5f21ab97382e379c745c.json",
+					"jsonFile" : "target-react_codegen_rnpicker-Debug-bdddf3b50b9dd6deed72.json",
 					"name" : "react_codegen_rnpicker",
 					"projectIndex" : 0
 				},
@@ -185,14 +185,14 @@
 				{
 					"directoryIndex" : 6,
 					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
-					"jsonFile" : "target-react_codegen_rnscreens-Debug-05ce174b1ef66d331532.json",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-49c12b15b03e5bf67f0f.json",
 					"name" : "react_codegen_rnscreens",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
-					"jsonFile" : "target-react_codegen_safeareacontext-Debug-b760f081b1f1570ac459.json",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-db41ff17231f1a2a80af.json",
 					"name" : "react_codegen_safeareacontext",
 					"projectIndex" : 0
 				}
@@ -202,7 +202,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86",
+		"build" : "C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64",
 		"source" : "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

@@ -3,6 +3,30 @@
   "reactNativePath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native",
   "reactNativeVersion": "0.76",
   "dependencies": {
+    "@react-native-community/checkbox": {
+      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox",
+      "name": "@react-native-community/checkbox",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox\\RNCCheckbox.podspec",
+          "version": "0.5.17",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox\\android",
+          "packageImportPath": "import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;",
+          "packageInstance": "new ReactCheckBoxPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/@react-native-community/checkbox/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
     "@react-native-community/datetimepicker": {
       "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\datetimepicker",
       "name": "@react-native-community/datetimepicker",

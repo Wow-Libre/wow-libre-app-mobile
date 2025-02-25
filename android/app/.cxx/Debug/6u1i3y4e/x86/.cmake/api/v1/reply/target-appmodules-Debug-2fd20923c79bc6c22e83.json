@@ -295,15 +295,15 @@
 	[
 		{
 			"backtrace" : 4,
+			"id" : "react_codegen_RNDateTimePickerCGen::@59b70ddc31ba2f8ef1d2"
+		},
+		{
+			"backtrace" : 4,
 			"id" : "react_codegen_rnpicker::@e8bb2e9e833f47d0d516"
 		},
 		{
 			"backtrace" : 4,
 			"id" : "react_codegen_rngesturehandler_codegen::@39f233abcd2c728bc6ec"
-		},
-		{
-			"backtrace" : 4,
-			"id" : "react_codegen_RNDateTimePickerCGen::@59b70ddc31ba2f8ef1d2"
 		},
 		{
 			"backtrace" : 4,
