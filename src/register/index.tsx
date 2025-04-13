@@ -1,18 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {
+  Alert,
+  Image,
   SafeAreaView,
   StyleSheet,
+  Switch,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  Image,
 } from 'react-native';
-import ModalSelector from 'react-native-modal-selector';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import Images from '../constant';
+import ModalSelector from 'react-native-modal-selector';
 import {getAvailableCountries} from '../api/external';
 import {CountryModel} from '../api/models/CountryModel';
+import Images from '../constant';
+import {registerAccountWeb} from '../api/internal';
 
 const defaultCountryOptions: CountryModel[] = [
   {value: 'Otro', label: 'Otro', language: 'pt'},
@@ -24,11 +27,17 @@ const RegisterScreen = (): React.JSX.Element => {
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [birthdate, setBirthdate] = useState<string>('');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
   const [countryOptions, setCountryOptions] = useState<CountryModel[]>(
     defaultCountryOptions,
   );
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [cellphone, setCellPhone] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [offersAccepted, setOffersAccepted] = useState(false);
 
   const showDatePicker = () => setDatePickerVisibility(true);
   const hideDatePicker = () => setDatePickerVisibility(false);
@@ -38,22 +47,42 @@ const RegisterScreen = (): React.JSX.Element => {
     hideDatePicker();
   };
 
-  const handleRegister = () => {
-    console.log('Registrando usuario...', {
-      selectedCountry,
-      email,
-      password,
-      birthdate,
-    });
+  const handleRegister = async () => {
+    try {
+      const userDateOfBirth = birthdate;
+
+      const formattedDateOfBirth = userDateOfBirth
+        ? !isNaN(new Date(userDateOfBirth).getTime())
+          ? new Date(userDateOfBirth).toISOString().split('T')[0]
+          : new Date().toISOString()
+        : new Date().toISOString();
+
+      const requestBody = {
+        country: selectedCountry,
+        date_of_birth: formattedDateOfBirth,
+        first_name: firstName,
+        last_name: lastName,
+        cell_phone: cellphone,
+        email: email,
+        password: password,
+        language: 'es',
+        token: '',
+      };
+
+      await registerAccountWeb(requestBody, 'ES');
+    } catch (error: any) {
+      return;
+    } finally {
+    }
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const fetchedCountryOptions = await getAvailableCountries();
-        // Transformamos los datos para que tengan key
+
         const formattedCountries = fetchedCountryOptions.map(country => ({
-          key: country.value, // Agregar un "key"
+          key: country.value,
           label: country.label,
           value: country.value,
           language: country.language,
@@ -65,6 +94,54 @@ const RegisterScreen = (): React.JSX.Element => {
     };
     fetchData();
   }, []);
+
+  const validateStep1 = () => {
+    if (!selectedCountry) {
+      Alert.alert('Error', 'Por favor selecciona tu país de residencia.');
+      return false;
+    }
+    if (!birthdate) {
+      Alert.alert('Error', 'Por favor selecciona tu fecha de nacimiento.');
+      return false;
+    }
+    return true;
+  };
+
+  const validateStep2 = () => {
+    if (lastName.length < 5) {
+      Alert.alert('Error', 'El nombre debe tener al menos 5 caracteres.');
+      return false;
+    }
+    if (firstName.length < 5) {
+      Alert.alert('Error', 'El apellido debe tener al menos 5 caracteres.');
+      return false;
+    }
+    return true;
+  };
+
+  const validateStep3 = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Alert.alert('Error', 'Por favor ingresa un correo electrónico válido.');
+      return false;
+    }
+    if (cellphone.length < 10) {
+      Alert.alert('Error', 'Por favor ingresa un número de teléfono válido.');
+      return false;
+    }
+    return true;
+  };
+  const validateStep4 = () => {
+    if (!termsAccepted) {
+      Alert.alert('Error', 'Debes aceptar los términos y condiciones.');
+      return false;
+    }
+    if (!offersAccepted) {
+      Alert.alert('Error', 'Debes aceptar recibir ofertas especiales.');
+      return false;
+    }
+    return true;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -102,7 +179,8 @@ const RegisterScreen = (): React.JSX.Element => {
 
           <Text style={styles.label}>Fecha de nacimiento:</Text>
           <TouchableOpacity style={styles.input} onPress={showDatePicker}>
-            <Text style={[styles.dateText, birthdate ? {} : {color: '#aaa'}]}>
+            <Text
+              style={[styles.dateText, !birthdate && styles.placeholderText]}>
               {birthdate || 'Selecciona tu fecha'}
             </Text>
           </TouchableOpacity>
@@ -115,12 +193,19 @@ const RegisterScreen = (): React.JSX.Element => {
           />
 
           <View style={styles.buttonWrapper}>
-            <TouchableOpacity style={styles.button} onPress={() => setStep(2)}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                if (validateStep1()) {
+                  setStep(2);
+                }
+              }}>
               <Text style={styles.buttonText}>Siguiente</Text>
             </TouchableOpacity>
           </View>
         </View>
       )}
+
       {step === 2 && (
         <View style={styles.stepContainer}>
           <Text style={styles.subTitle}>
@@ -134,8 +219,8 @@ const RegisterScreen = (): React.JSX.Element => {
             placeholder="Nombre personales"
             placeholderTextColor="#aaa"
             keyboardType="default"
-            value={email}
-            onChangeText={setEmail}
+            value={firstName}
+            onChangeText={setFirstName}
           />
 
           <Text style={styles.label}>Ingrese sus apellidos:</Text>
@@ -144,13 +229,19 @@ const RegisterScreen = (): React.JSX.Element => {
             placeholder="Apellido personales"
             placeholderTextColor="#aaa"
             keyboardType="default"
-            value={email}
-            onChangeText={setEmail}
+            value={lastName}
+            onChangeText={setLastname}
           />
 
           {/* Contenedor de los botones */}
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => setStep(3)}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                if (validateStep2()) {
+                  setStep(3);
+                }
+              }}>
               <Text style={styles.buttonText}>Siguiente</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -184,13 +275,19 @@ const RegisterScreen = (): React.JSX.Element => {
             placeholder="+"
             placeholderTextColor="#aaa"
             keyboardType="phone-pad"
-            value={password}
-            onChangeText={setPassword}
+            value={cellphone}
+            onChangeText={setCellPhone}
           />
 
           {/* Contenedor de los botones */}
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => setStep(4)}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                if (validateStep3()) {
+                  setStep(4);
+                }
+              }}>
               <Text style={styles.buttonText}>Siguiente</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -209,29 +306,35 @@ const RegisterScreen = (): React.JSX.Element => {
             sumergirte en una experiencia personalizada llena de ofertas
             exclusivas, noticias emocionantes y mucho más.
           </Text>
-          <Text style={styles.label}>Correo electrónico:</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Ejemplo: usuario@mail.com"
-            placeholderTextColor="#aaa"
-            keyboardType="email-address"
-            value={email}
-            onChangeText={setEmail}
-          />
 
-          <Text style={styles.label}>Contraseña:</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="••••••••"
-            placeholderTextColor="#aaa"
-            secureTextEntry
-            value={password}
-            onChangeText={setPassword}
-          />
+          <View style={styles.checkboxContainer}>
+            <Switch
+              value={termsAccepted ?? false}
+              onValueChange={newValue => setTermsAccepted(newValue)}
+            />
+            <Text style={styles.checkboxLabel}>
+              He leído y acepto los Términos y condiciones
+            </Text>
+          </View>
 
+          <View style={styles.checkboxContainer}>
+            <Switch
+              value={offersAccepted ?? false}
+              onValueChange={newValue => setOffersAccepted(newValue)}
+            />
+            <Text style={styles.checkboxLabel}>
+              El correo de la cuenta recibirá ofertas especiales, noticias
+            </Text>
+          </View>
           {/* Contenedor de los botones */}
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => setStep(5)}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                if (validateStep4()) {
+                  setStep(5);
+                }
+              }}>
               <Text style={styles.buttonText}>Siguiente</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -324,6 +427,9 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     height: '100%',
   },
+  placeholderText: {
+    color: '#aaa',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -388,6 +494,15 @@ const styles = StyleSheet.create({
   },
   backButton: {
     backgroundColor: '#888',
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 8,
+  },
+  checkboxLabel: {
+    marginLeft: 8,
+    color: '#ffffff',
   },
 });
 

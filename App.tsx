@@ -15,6 +15,7 @@ function App(): React.JSX.Element {
           component={LoginScreen}
           options={{headerShown: false}}
         />
+
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
