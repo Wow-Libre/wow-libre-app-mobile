@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Alert,
   Image,
@@ -14,8 +14,10 @@ import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import ModalSelector from 'react-native-modal-selector';
 import {getAvailableCountries} from '../api/external';
 import {CountryModel} from '../api/models/CountryModel';
-import Images from '../constant';
+import {Configs, Images} from '../constant';
 import {registerAccountWeb} from '../api/internal';
+import {RecaptchaRef} from 'react-native-recaptcha-that-works';
+import Recaptcha from 'react-native-recaptcha-that-works';
 
 const defaultCountryOptions: CountryModel[] = [
   {value: 'Otro', label: 'Otro', language: 'pt'},
@@ -38,16 +40,33 @@ const RegisterScreen = (): React.JSX.Element => {
   const [cellphone, setCellPhone] = useState('');
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [offersAccepted, setOffersAccepted] = useState(false);
+  const recaptcha = useRef<RecaptchaRef>(null);
+  const [captchToken, setCaptcha] = useState('');
 
   const showDatePicker = () => setDatePickerVisibility(true);
   const hideDatePicker = () => setDatePickerVisibility(false);
+
+  const onVerify = (token: any) => {
+    setCaptcha(token);
+  };
+
+  const onExpire = () => {
+    console.warn('expired!');
+  };
+
   const handleConfirm = (date: Date) => {
-    const formattedDate = date.toISOString().split('T')[0]; // Formato YYYY-MM-DD
+    const formattedDate = date.toISOString().split('T')[0];
     setBirthdate(formattedDate);
     hideDatePicker();
   };
 
   const handleRegister = async () => {
+    if (!recaptcha.current) {
+      return;
+    }
+
+    recaptcha.current.open();
+
     try {
       const userDateOfBirth = birthdate;
 
@@ -66,7 +85,7 @@ const RegisterScreen = (): React.JSX.Element => {
         email: email,
         password: password,
         language: 'es',
-        token: '',
+        token: captchToken,
       };
 
       await registerAccountWeb(requestBody, 'ES');
@@ -382,6 +401,14 @@ const RegisterScreen = (): React.JSX.Element => {
               onPress={() => setStep(4)}>
               <Text style={styles.buttonText}>Volver</Text>
             </TouchableOpacity>
+            <Recaptcha
+              ref={recaptcha}
+              siteKey={Configs.KEY_GOOGLE_RECAPTCHA}
+              baseUrl="http://www.wowlibre.com"
+              onVerify={onVerify}
+              onExpire={onExpire}
+              size="normal"
+            />
           </View>
         </View>
       )}

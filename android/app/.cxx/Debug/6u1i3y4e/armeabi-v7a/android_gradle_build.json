@@ -6,6 +6,7 @@
     "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-reanimated\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-safe-area-context\\android\\src\\main\\jni\\CMakeLists.txt",
     "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-screens\\android\\src\\main\\jni\\CMakeLists.txt",
+    "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native\\ReactAndroid\\cmake-utils\\default-app-setup\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
@@ -36,6 +37,11 @@
         "C:\\Users\\usuario\\.gradle\\caches\\8.10.2\\transforms\\1ae2c2bcce3cae52224b57e1fa01bdc7\\transformed\\react-android-0.76.5-debug\\prefab\\modules\\jsi\\libs\\android.armeabi-v7a\\libjsi.so",
         "C:\\Users\\usuario\\.gradle\\caches\\8.10.2\\transforms\\1ae2c2bcce3cae52224b57e1fa01bdc7\\transformed\\react-android-0.76.5-debug\\prefab\\modules\\reactnative\\libs\\android.armeabi-v7a\\libreactnative.so"
       ]
+    },
+    "react_codegen_RNCWebViewSpec::@eb48929f9f7453740a6c": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "react_codegen_RNCWebViewSpec"
     },
     "react_codegen_RNDateTimePickerCGen::@59b70ddc31ba2f8ef1d2": {
       "toolchain": "toolchain",

@@ -1,14 +1,14 @@
 import React from 'react';
 import {
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  Image,
 } from 'react-native';
-import Images from '../constant';
+import {Images} from '../constant';
 
 const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
   return (

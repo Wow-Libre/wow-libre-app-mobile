@@ -50,6 +50,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86/rnreanimated_autolinked_build/cmake_install.cmake")
   include("C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86/safeareacontext_autolinked_build/cmake_install.cmake")
   include("C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86/rnscreens_autolinked_build/cmake_install.cmake")
+  include("C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86/RNCWebViewSpec_autolinked_build/cmake_install.cmake")
 
 endif()
 

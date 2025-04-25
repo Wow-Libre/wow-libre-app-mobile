@@ -19,3 +19,6 @@ C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/
 C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
 C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/RNCWebViewSpec_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/usuario/Documents/AppWowLibre/wowlibre/android/app/.cxx/Debug/6u1i3y4e/x86_64/RNCWebViewSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

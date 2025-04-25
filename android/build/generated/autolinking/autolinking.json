@@ -86,7 +86,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-gesture-handler\\RNGestureHandler.podspec",
-          "version": "2.22.1",
+          "version": "2.25.0",
           "configurations": [],
           "scriptPhases": []
         },
@@ -114,7 +114,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-reanimated\\RNReanimated.podspec",
-          "version": "3.16.7",
+          "version": "3.17.3",
           "configurations": [],
           "scriptPhases": []
         },
@@ -139,7 +139,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec",
-          "version": "5.1.0",
+          "version": "5.3.0",
           "configurations": [],
           "scriptPhases": []
         },
@@ -167,7 +167,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-screens\\RNScreens.podspec",
-          "version": "4.6.0",
+          "version": "4.10.0",
           "configurations": [],
           "scriptPhases": []
         },
@@ -191,6 +191,33 @@
             "RNSModalScreenComponentDescriptor"
           ],
           "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-webview": {
+      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview",
+      "name": "react-native-webview",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview\\react-native-webview.podspec",
+          "version": "13.13.5",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview\\android",
+          "packageImportPath": "import com.reactnativecommunity.webview.RNCWebViewPackage;",
+          "packageInstance": "new RNCWebViewPackage()",
+          "buildTypes": [],
+          "libraryName": "RNCWebViewSpec",
+          "componentDescriptors": [
+            "RNCWebViewComponentDescriptor"
+          ],
+          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
