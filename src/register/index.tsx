@@ -150,6 +150,7 @@ const RegisterScreen = (): React.JSX.Element => {
     }
     return true;
   };
+
   const validateStep4 = () => {
     if (!termsAccepted) {
       Alert.alert('Error', 'Debes aceptar los términos y condiciones.');

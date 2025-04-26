@@ -35,7 +35,8 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
         <Text style={styles.buttonText}>Loguearme</Text>
       </TouchableOpacity>
       <View style={styles.linksContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('RecoveryPassword')}>
           <Text style={styles.linkText}>Olvidar Clave</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
@@ -49,14 +50,11 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
           <Text style={styles.pageWeb}>🌐 www.wowlibre.com</Text>
         </TouchableOpacity>
         <Text style={styles.footerText}>
-          World of Warcraft® and Blizzard Entertainment® are trademarks or
-          registered trademarks of Blizzard Entertainment in the United States
-          and/or other countries.
+          @WowLibre We develop innovative solutions for the gaming community.
         </Text>
         <Text style={styles.footerText}>
-          These terms and all related materials, logos, and images are copyright
-          © Blizzard Entertainment. This site is in no way associated with or
-          endorsed by Blizzard Entertainment®.
+          We enhance the gaming experience with advanced software, fostering the
+          creation of unique and immersive worlds.
         </Text>
       </View>
     </SafeAreaView>
