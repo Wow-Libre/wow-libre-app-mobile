@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from './src/login';
 import RegisterScreen from './src/register'; // Ruta correcta para Register
 import RecoveryPassword from './src/recovery_password';
+import ProfileScreen from './src/profile';
+import ShopScreen from './src/shop';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,18 @@ function App(): React.JSX.Element {
         <Stack.Screen
           name="RecoveryPassword"
           component={RecoveryPassword}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="Shop"
+          component={ShopScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

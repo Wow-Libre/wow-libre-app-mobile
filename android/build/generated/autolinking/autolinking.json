@@ -1,25 +1,25 @@
 {
-  "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre",
-  "reactNativePath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native",
+  "root": "/Users/machitiva/Documents/wow-libre-app-mobile",
+  "reactNativePath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native",
   "reactNativeVersion": "0.76",
   "dependencies": {
     "@react-native-community/checkbox": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/checkbox",
       "name": "@react-native-community/checkbox",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox\\RNCCheckbox.podspec",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/checkbox/RNCCheckbox.podspec",
           "version": "0.5.17",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\checkbox\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/checkbox/android",
           "packageImportPath": "import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;",
           "packageInstance": "new ReactCheckBoxPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/@react-native-community/checkbox/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/checkbox/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -28,23 +28,23 @@
       }
     },
     "@react-native-community/datetimepicker": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\datetimepicker",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/datetimepicker",
       "name": "@react-native-community/datetimepicker",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\datetimepicker\\RNDateTimePicker.podspec",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/datetimepicker/RNDateTimePicker.podspec",
           "version": "8.3.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-community\\datetimepicker\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/datetimepicker/android",
           "packageImportPath": "import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;",
           "packageInstance": "new RNDateTimePickerPackage()",
           "buildTypes": [],
           "libraryName": "RNDateTimePickerCGen",
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/@react-native-community/datetimepicker/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-community/datetimepicker/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -53,17 +53,17 @@
       }
     },
     "@react-native-picker/picker": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-picker\\picker",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-picker/picker",
       "name": "@react-native-picker/picker",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-picker\\picker\\RNCPicker.podspec",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-picker/picker/RNCPicker.podspec",
           "version": "2.11.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\@react-native-picker\\picker\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-picker/picker/android",
           "packageImportPath": "import com.reactnativecommunity.picker.RNCPickerPackage;",
           "packageInstance": "new RNCPickerPackage()",
           "buildTypes": [],
@@ -72,7 +72,7 @@
             "RNCAndroidDialogPickerComponentDescriptor",
             "RNCAndroidDropdownPickerComponentDescriptor"
           ],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/@react-native-picker/picker/android/src/main/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/@react-native-picker/picker/android/src/main/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -81,17 +81,17 @@
       }
     },
     "react-native-gesture-handler": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-gesture-handler",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-gesture-handler",
       "name": "react-native-gesture-handler",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-gesture-handler\\RNGestureHandler.podspec",
-          "version": "2.25.0",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-gesture-handler/RNGestureHandler.podspec",
+          "version": "2.22.1",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-gesture-handler\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-gesture-handler/android",
           "packageImportPath": "import com.swmansion.gesturehandler.RNGestureHandlerPackage;",
           "packageInstance": "new RNGestureHandlerPackage()",
           "buildTypes": [],
@@ -100,7 +100,7 @@
             "RNGestureHandlerButtonComponentDescriptor",
             "RNGestureHandlerRootViewComponentDescriptor"
           ],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -109,23 +109,23 @@
       }
     },
     "react-native-reanimated": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-reanimated",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-reanimated",
       "name": "react-native-reanimated",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-reanimated\\RNReanimated.podspec",
-          "version": "3.17.3",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-reanimated/RNReanimated.podspec",
+          "version": "3.16.7",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-reanimated\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-reanimated/android",
           "packageImportPath": "import com.swmansion.reanimated.ReanimatedPackage;",
           "packageInstance": "new ReanimatedPackage()",
           "buildTypes": [],
           "libraryName": "rnreanimated",
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -134,17 +134,17 @@
       }
     },
     "react-native-safe-area-context": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-safe-area-context",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-safe-area-context",
       "name": "react-native-safe-area-context",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec",
-          "version": "5.3.0",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-safe-area-context/react-native-safe-area-context.podspec",
+          "version": "5.1.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-safe-area-context\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-safe-area-context/android",
           "packageImportPath": "import com.th3rdwave.safeareacontext.SafeAreaContextPackage;",
           "packageInstance": "new SafeAreaContextPackage()",
           "buildTypes": [],
@@ -153,7 +153,7 @@
             "RNCSafeAreaProviderComponentDescriptor",
             "RNCSafeAreaViewComponentDescriptor"
           ],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -162,17 +162,17 @@
       }
     },
     "react-native-screens": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-screens",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-screens",
       "name": "react-native-screens",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-screens\\RNScreens.podspec",
-          "version": "4.10.0",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-screens/RNScreens.podspec",
+          "version": "4.6.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-screens\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-screens/android",
           "packageImportPath": "import com.swmansion.rnscreens.RNScreensPackage;",
           "packageInstance": "new RNScreensPackage()",
           "buildTypes": [],
@@ -190,7 +190,7 @@
             "RNSScreenContentWrapperComponentDescriptor",
             "RNSModalScreenComponentDescriptor"
           ],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -199,17 +199,17 @@
       }
     },
     "react-native-webview": {
-      "root": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview",
+      "root": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-webview",
       "name": "react-native-webview",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview\\react-native-webview.podspec",
-          "version": "13.13.5",
+          "podspecPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-webview/react-native-webview.podspec",
+          "version": "13.16.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\node_modules\\react-native-webview\\android",
+          "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-webview/android",
           "packageImportPath": "import com.reactnativecommunity.webview.RNCWebViewPackage;",
           "packageInstance": "new RNCWebViewPackage()",
           "buildTypes": [],
@@ -217,7 +217,7 @@
           "componentDescriptors": [
             "RNCWebViewComponentDescriptor"
           ],
-          "cmakeListsPath": "C:/Users/usuario/Documents/AppWowLibre/wowlibre/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "/Users/machitiva/Documents/wow-libre-app-mobile/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -383,7 +383,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre"
+          "default": "/Users/machitiva/Documents/wow-libre-app-mobile"
         },
         {
           "name": "--platform <string>",
@@ -434,8 +434,7 @@
         },
         {
           "name": "--terminal <string>",
-          "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
-          "default": "cmd.exe"
+          "description": "Launches the Metro Bundler in a new window using the specified terminal path."
         },
         {
           "name": "--binary-path <string>",
@@ -594,8 +593,7 @@
         },
         {
           "name": "--terminal <string>",
-          "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
-          "default": "cmd.exe"
+          "description": "Launches the Metro Bundler in a new window using the specified terminal path."
         },
         {
           "name": "--appId <string>",
@@ -670,16 +668,16 @@
   "assets": [],
   "project": {
     "ios": {
-      "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\ios",
+      "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/ios",
       "xcodeProject": {
-        "name": "wowlibre.xcodeproj",
+        "name": "wowlibre.xcworkspace",
         "path": ".",
-        "isWorkspace": false
+        "isWorkspace": true
       },
       "assets": []
     },
     "android": {
-      "sourceDir": "C:\\Users\\usuario\\Documents\\AppWowLibre\\wowlibre\\android",
+      "sourceDir": "/Users/machitiva/Documents/wow-libre-app-mobile/android",
       "appName": "app",
       "packageName": "com.wowlibre",
       "applicationId": "com.wowlibre",
