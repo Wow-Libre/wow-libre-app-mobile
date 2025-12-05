@@ -6,6 +6,7 @@ import RegisterScreen from './src/register'; // Ruta correcta para Register
 import RecoveryPassword from './src/recovery_password';
 import ProfileScreen from './src/profile';
 import ShopScreen from './src/shop';
+import FruitWheelScreen from './src/fruit_wheel';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,12 @@ function App(): React.JSX.Element {
         <Stack.Screen
           name="Shop"
           component={ShopScreen}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="FruitWheel"
+          component={FruitWheelScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

@@ -25,7 +25,7 @@ const defaultCountryOptions: CountryModel[] = [
 ];
 
 const RegisterScreen = (): React.JSX.Element => {
-  const [step, setStep] = useState(1); // Controla en qué paso estamos
+  const [step, setStep] = useState(1); 
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [birthdate, setBirthdate] = useState<string>('');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);

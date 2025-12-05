@@ -387,6 +387,16 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
           <Text style={styles.shopButtonText}>Visitar Tienda</Text>
           <Text style={styles.shopButtonArrow}>→</Text>
         </TouchableOpacity>
+
+        {/* Fruit Wheel Button */}
+        <TouchableOpacity
+          style={styles.fruitWheelButton}
+          onPress={() => navigation.navigate('FruitWheel')}
+          activeOpacity={0.8}>
+          <Text style={styles.fruitWheelButtonIcon}>🎰</Text>
+          <Text style={styles.fruitWheelButtonText}>Ruleta de Frutas</Text>
+          <Text style={styles.fruitWheelButtonArrow}>→</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -695,6 +705,41 @@ const styles = StyleSheet.create({
   shopButtonArrow: {
     fontSize: 24,
     color: '#ffd700',
+    fontWeight: '700',
+  },
+  fruitWheelButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#1a1a1a',
+    borderRadius: 16,
+    padding: 20,
+    marginTop: 16,
+    borderWidth: 2,
+    borderColor: '#ec4899',
+    shadowColor: '#ec4899',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  fruitWheelButtonIcon: {
+    fontSize: 28,
+  },
+  fruitWheelButtonText: {
+    flex: 1,
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#ec4899',
+    marginLeft: 12,
+    letterSpacing: 0.5,
+  },
+  fruitWheelButtonArrow: {
+    fontSize: 24,
+    color: '#ec4899',
     fontWeight: '700',
   },
 });

@@ -162,7 +162,7 @@ const getRarityName = (rarity: string) => {
   }
 };
 
-const ShopScreen = (): React.JSX.Element => {
+const ShopScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [cart, setCart] = useState<string[]>([]);
 
@@ -247,14 +247,22 @@ const ShopScreen = (): React.JSX.Element => {
             {cart.length} items en el carrito
           </Text>
         </View>
-        <TouchableOpacity style={styles.cartButton}>
-          <Text style={styles.cartIcon}>🛒</Text>
-          {cart.length > 0 && (
-            <View style={styles.cartCount}>
-              <Text style={styles.cartCountText}>{cart.length}</Text>
-            </View>
-          )}
-        </TouchableOpacity>
+        <View style={styles.headerButtons}>
+          <TouchableOpacity
+            style={styles.fruitWheelHeaderButton}
+            onPress={() => navigation.navigate('FruitWheel')}
+            activeOpacity={0.7}>
+            <Text style={styles.fruitWheelHeaderIcon}>🎰</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.cartButton}>
+            <Text style={styles.cartIcon}>🛒</Text>
+            {cart.length > 0 && (
+              <View style={styles.cartCount}>
+                <Text style={styles.cartCountText}>{cart.length}</Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Categories */}
@@ -313,6 +321,24 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#1f1f1f',
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center',
+  },
+  fruitWheelHeaderButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#1a1a1a',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#ec4899',
+  },
+  fruitWheelHeaderIcon: {
+    fontSize: 24,
   },
   headerTitle: {
     fontSize: 28,

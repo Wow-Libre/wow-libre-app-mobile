@@ -14,6 +14,8 @@ import {
 import {Images} from '../constant';
 
 const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
+  console.log('LoginScreen: Component rendering');
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [usernameFocused, setUsernameFocused] = useState(false);
@@ -36,6 +38,9 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
                   uri: Images.WOW_ICON,
                 }}
                 resizeMode="contain"
+                onError={(error) => {
+                  console.error('Error loading login image:', error);
+                }}
               />
             </View>
             <Text style={styles.title}>Wow Libre</Text>
