@@ -11,6 +11,7 @@ import CredentialsStep from './steps/CredentialsStep';
 import TermsStep from './steps/TermsStep';
 import PasswordStep from './steps/PasswordStep';
 import { SERVER_NAME } from '../api/configs/configs';
+import * as StorageService from '../services/storage';
 
 const defaultCountryOptions: CountryModel[] = [
   {value: 'Otro', label: 'Otro', language: 'pt'},
@@ -79,8 +80,6 @@ const RegisterScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
   };
 
   const handleRegister = async (token: string): Promise<void> => {
-    console.log('=== handleRegister llamado ===');
-    console.log('Token recibido:', token ? 'Token presente' : 'Sin token');
     
     const userDateOfBirth = formData.birthdate;
 
@@ -112,6 +111,32 @@ const RegisterScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
       console.log('Llamando a registerAccountWeb...');
       const result = await registerAccountWeb(requestBody, 'ES');
       console.log('registerAccountWeb exitoso:', result);
+      
+      // Guardar los datos del usuario en almacenamiento local
+      // Esto es crítico para mantener la sesión
+      if (!StorageService || !StorageService.saveUserData) {
+        console.error('StorageService no está disponible');
+        throw new Error('No se pudo inicializar el almacenamiento. Por favor reconstruye la aplicación.');
+      }
+
+      try {
+        await StorageService.saveUserData(result);
+        console.log('Datos del usuario guardados en almacenamiento local');
+      } catch (storageError: any) {
+        console.error('Error al guardar datos en almacenamiento local:', storageError);
+        
+        // Si AsyncStorage no está disponible, es un error crítico
+        if (storageError?.message?.includes('AsyncStorage') || 
+            storageError?.message?.includes('NativeModule')) {
+          throw new Error(
+            'AsyncStorage no está disponible. Por favor reconstruye la app (npx react-native run-ios o run-android) y vuelve a intentar.',
+          );
+        }
+        
+        // Para otros errores, también es crítico
+        throw new Error('No se pudieron guardar los datos de la sesión. Por favor intenta de nuevo.');
+      }
+      
       // Si el registro es exitoso, navegar al perfil
       console.log('Navegando a Profile...');
       navigation.navigate('Profile');

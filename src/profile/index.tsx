@@ -58,7 +58,9 @@ const StatBar: React.FC<StatBarProps> = ({label, value, maxValue, color, icon}) 
   );
 };
 
-const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
+const ProfileScreen = ({navigation, route}: {navigation: any; route?: any}): React.JSX.Element => {
+  const character = route?.params?.character;
+  const account = route?.params?.account;
   const [characterStats, setCharacterStats] = useState({
     life: 85,
     fun: 60,
@@ -174,9 +176,24 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}>
         {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>Mi Perfil</Text>
-          <Text style={styles.headerSubtitle}>Gestiona tu personaje</Text>
+        <View style={styles.headerContainer}>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigation.goBack()}
+            activeOpacity={0.7}>
+            <Text style={styles.backButtonText}>← Volver</Text>
+          </TouchableOpacity>
+          <View style={styles.header}>
+            <Text style={styles.headerTitle}>Administración del Personaje</Text>
+            {character && (
+              <Text style={styles.headerSubtitle}>
+                {character.name} - {account?.realm || 'Reino desconocido'}
+              </Text>
+            )}
+            {!character && (
+              <Text style={styles.headerSubtitle}>Gestiona tu personaje</Text>
+            )}
+          </View>
         </View>
 
         {/* Character Card */}
@@ -193,9 +210,14 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
               },
             ]}>
             <Image
-              source={{uri: Images.WOW_ICON}}
+              source={{
+                uri: character?.race_logo  || Images.WOW_ICON,
+              }}
               style={styles.characterImage}
               resizeMode="contain"
+              defaultSource={{
+                uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png',
+              }}
             />
             {/* Glow effect */}
             <Animated.View
@@ -305,11 +327,11 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
           <Text style={styles.sectionTitle}>Estadísticas</Text>
 
           <StatBar
-            label="Vida"
+            label="Comida"
             value={characterStats.life}
             maxValue={100}
             color="#ef4444"
-            icon="❤️"
+            icon="🍔"
           />
 
           <StatBar
@@ -337,8 +359,8 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
               style={[styles.actionButton, styles.lifeButton]}
               onPress={() => handleStatAction('life', 10)}
               activeOpacity={0.8}>
-              <Text style={styles.actionButtonIcon}>❤️</Text>
-              <Text style={styles.actionButtonText}>+ Vida</Text>
+              <Text style={styles.actionButtonIcon}>🍔</Text>
+              <Text style={styles.actionButtonText}>+ Comida</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -387,16 +409,6 @@ const ProfileScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
           <Text style={styles.shopButtonText}>Visitar Tienda</Text>
           <Text style={styles.shopButtonArrow}>→</Text>
         </TouchableOpacity>
-
-        {/* Fruit Wheel Button */}
-        <TouchableOpacity
-          style={styles.fruitWheelButton}
-          onPress={() => navigation.navigate('FruitWheel')}
-          activeOpacity={0.8}>
-          <Text style={styles.fruitWheelButtonIcon}>🎰</Text>
-          <Text style={styles.fruitWheelButtonText}>Ruleta de Frutas</Text>
-          <Text style={styles.fruitWheelButtonArrow}>→</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -412,9 +424,21 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 30,
   },
+  headerContainer: {
+    marginBottom: 24,
+  },
+  backButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginBottom: 12,
+  },
   header: {
     alignItems: 'center',
-    marginBottom: 24,
+  },
+  backButtonText: {
+    color: '#1e88e5',
+    fontSize: 16,
+    fontWeight: '600',
   },
   headerTitle: {
     fontSize: 32,
@@ -456,11 +480,12 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: '#1e88e5',
     position: 'relative',
-    overflow: 'visible',
+    overflow: 'hidden',
   },
   characterImage: {
     width: 100,
     height: 100,
+    borderRadius: 50,
     zIndex: 2,
   },
   characterGlow: {
@@ -705,41 +730,6 @@ const styles = StyleSheet.create({
   shopButtonArrow: {
     fontSize: 24,
     color: '#ffd700',
-    fontWeight: '700',
-  },
-  fruitWheelButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#1a1a1a',
-    borderRadius: 16,
-    padding: 20,
-    marginTop: 16,
-    borderWidth: 2,
-    borderColor: '#ec4899',
-    shadowColor: '#ec4899',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 6,
-  },
-  fruitWheelButtonIcon: {
-    fontSize: 28,
-  },
-  fruitWheelButtonText: {
-    flex: 1,
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#ec4899',
-    marginLeft: 12,
-    letterSpacing: 0.5,
-  },
-  fruitWheelButtonArrow: {
-    fontSize: 24,
-    color: '#ec4899',
     fontWeight: '700',
   },
 });

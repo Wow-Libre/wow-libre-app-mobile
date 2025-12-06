@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   Image,
   SafeAreaView,
   ScrollView,
@@ -10,8 +11,11 @@ import {
   View,
   KeyboardAvoidingView,
   Platform,
+  ActivityIndicator,
 } from 'react-native';
 import {Images} from '../constant';
+import {login} from '../api/internal';
+import * as StorageService from '../services/storage';
 
 const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
   console.log('LoginScreen: Component rendering');
@@ -20,6 +24,73 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
   const [password, setPassword] = useState('');
   const [usernameFocused, setUsernameFocused] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLogin = async () => {
+    // Validación básica
+    if (!username.trim()) {
+      Alert.alert('Error', 'Por favor ingresa tu usuario o correo electrónico.');
+      return;
+    }
+
+    if (!password.trim()) {
+      Alert.alert('Error', 'Por favor ingresa tu contraseña.');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      console.log('Iniciando login...');
+      const result = await login(username.trim(), password);
+      console.log('Login exitoso:', result);
+
+      // Guardar los datos del usuario en almacenamiento local
+      // Esto es crítico para mantener la sesión
+      if (!StorageService || !StorageService.saveUserData) {
+        console.error('StorageService no está disponible');
+        Alert.alert(
+          'Error de configuración',
+          'No se pudo inicializar el almacenamiento. Por favor reconstruye la aplicación.',
+        );
+        return;
+      }
+
+      try {
+        await StorageService.saveUserData(result);
+        console.log('Datos del usuario guardados en almacenamiento local');
+      } catch (storageError: any) {
+        console.error('Error al guardar datos en almacenamiento local:', storageError);
+        
+        // Si AsyncStorage no está disponible, es un error crítico
+        if (storageError?.message?.includes('AsyncStorage') || 
+            storageError?.message?.includes('NativeModule')) {
+          Alert.alert(
+            'Error de almacenamiento',
+            'AsyncStorage no está disponible. Por favor:\n\n1. Detén la aplicación\n2. Reconstruye la app (npx react-native run-ios o run-android)\n3. Vuelve a intentar',
+          );
+          return;
+        }
+        
+        // Para otros errores, también es crítico
+        Alert.alert(
+          'Error al guardar sesión',
+          'No se pudieron guardar los datos de la sesión. Por favor intenta de nuevo.',
+        );
+        return;
+      }
+
+      // Navegar a la vista Home
+      navigation.navigate('Home');
+    } catch (error: any) {
+      console.error('Error en login:', error);
+      Alert.alert(
+        'Error de inicio de sesión',
+        error?.message || 'No se pudo iniciar sesión. Por favor intenta de nuevo.',
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +115,7 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
               />
             </View>
             <Text style={styles.title}>Wow Libre</Text>
-            <Text style={styles.subtitle}>Bienvenido de nuevo</Text>
+            <Text style={styles.subtitle}>Comunidad Gaming</Text>
           </View>
 
           <View style={styles.formContainer}>
@@ -86,10 +157,15 @@ const LoginScreen = ({navigation}: {navigation: any}): React.JSX.Element => {
             </View>
 
             <TouchableOpacity
-              style={styles.button}
+              style={[styles.button, isLoading && styles.buttonDisabled]}
               activeOpacity={0.8}
-              onPress={() => navigation.navigate('Profile')}>
-              <Text style={styles.buttonText}>Iniciar Sesión</Text>
+              onPress={handleLogin}
+              disabled={isLoading}>
+              {isLoading ? (
+                <ActivityIndicator color="#ffffff" size="small" />
+              ) : (
+                <Text style={styles.buttonText}>Iniciar Sesión</Text>
+              )}
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -250,6 +326,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     letterSpacing: 0.5,
+  },
+  buttonDisabled: {
+    opacity: 0.6,
   },
   forgotPasswordContainer: {
     alignItems: 'center',
