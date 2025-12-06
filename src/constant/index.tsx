@@ -6,5 +6,8 @@ export class Images {
 }
 
 export class Configs {
-  static KEY_GOOGLE_RECAPTCHA = '6LcbSqcqAAAAAEQ0ODkqHr7WT1OJ9RwQfA1D9U1x';
+  static KEY_GOOGLE_RECAPTCHA = '6Lcd3iArAAAAAAUJI-22bSPgBrh6lmT2BEXu66Hb';
+  static RECAPTCHA_BASE_URL = process.env.NODE_ENV === 'production' 
+    ? 'https://www.wowlibre.com' 
+    : 'http://localhost:8081';
 }
