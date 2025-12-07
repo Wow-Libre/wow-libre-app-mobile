@@ -60,3 +60,5 @@ fastlane/test_output/
 
 # Metro bundler cache
 .metro/
+.metro-cache/
+.tmp/
